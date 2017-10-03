@@ -6,6 +6,7 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+	<script src="https://unpkg.com/vue"></script>
 </head>
 <body class="shower list">
 
@@ -14,64 +15,430 @@
 		<p>Plotko Pavlo</p>
 	</header>
 
-	<section class="slide" id="test">
-		<h2>Готовность Vue.js</h2>
-		<img src="pictures/testweb.jpg" alt="30/30">
-			<a href="https://vk.com/away.php?to=https%3A%2F%2Fcustom-elements-everywhere.com%2F&cc_key=">
-				https://custom-elements-everywhere.com/</a>
-		<style>
-			#test img {
-				width:0.72em;
-				height:0.72em;
-			}
-		</style>
-
-
-	</section>
-
-
-
 	<section class="slide" id="cover">
-		<h2>Shower Presentation Engine</h2>
-		<p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
-		<figure>
-			<img class="cover" src="pictures/cover.jpg" alt="Hands on the orange typewriter in a park">
-			<figcaption class="white">
-				<a href="http://fiftyfootshadows.net/">© John Carey</a>
-			</figcaption>
-		</figure>
+		<h2>Vue.js</h2>
+		<img class="cover" src="pictures/Vue.png" alt="Vue">
 		<style>
-			#cover h2 {
-				margin:30px 0 0;
-				color:#FFF;
-				text-align:center;
-				font-size:70px;
-				}
-			#cover p {
-				margin:10px 0 0;
-				text-align:center;
-				color:#FFF;
-				font-style:italic;
-				font-size:20px;
-				}
-				#cover p a {
-					color:#FFF;
-					}
 		</style>
 	</section>
 
 	<section class="slide">
-		<h2>Shower key features</h2>
+		<h2>План</h2>
 		<ol>
-			<li>Built on HTML, CSS and vanilla JavaScript</li>
-			<li>Works in all modern browsers</li>
-			<li>Themes are separated from engine</li>
-			<li>Modular and extensible</li>
-			<li>Fully keyboard accessible</li>
-			<li>Printable to PDF</li>
+			<li>Веб-компоненты</li>
+			<li>Vue.js</li>
+
 		</ol>
-		<p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
 	</section>
+
+	<section class="slide" id="web-example1">
+		<pre>
+			<code> &lt;div id="jp_container" class="jp-audio" role="application" aria-label="media player"&gt; </code>
+			<code>	&lt;div class="jp-type-single"&gt;  </code>
+			<code>		&lt;div class="jp-gui jp-interface"&gt;</code>
+			<code>			&lt;div class="jp-controls"&gt;</code>
+			<code>				&lt;button class="jp-play" role="button" tabindex="0"&gt;  play &lt; /button&gt;</code>
+			<code>				&lt;button class="jp-stop" role="button" tabindex="0"&gt;  stop &lt; /button&gt;</code>
+			<code>			&lt;/div&gt; </code>
+			<code>			&lt;div class="jp-progress"&gt;</code>
+			<code>				&lt;div class="jp-seek-bar" style="width: 100%;"&gt; </code>
+			<code>					&lt;div class="jp-play-bar" style="width: 0%;"&gt;   &lt; /div&gt;  </code>
+			<code>				&lt;/div&gt;</code>
+			<code>			&lt;/div&gt;</code>
+			<code>			&lt;div class="jp-volume-controls"&gt; </code>
+			<code>				button  class="jp-mute" role="button" tabindex="0"&gt;mute &lt;/button&gt; </code>
+			<code>				&lt;button  class="jp-volume-max" role="button" tabindex="0"&gt; max volume &lt;/button&gt; </code>
+			<code>				&lt;div class="jp-volume-bar"&gt;</code>
+			<code>					&lt;div class="jp-volume-bar-value" style="width: 80%;"&gt; &lt;/div></code>
+			<code>				&lt; /div&gt;</code>
+			<code>			&lt; /div&gt;</code>
+			<code>			&lt;div class="jp-time-holder"&gt;</code>
+			<code>				&lt;div class="jp-current-time" role="timer" aria-label="time"&gt;00:00 &lt;/div&gt; </code>
+			<code>				&lt;div class="jp-duration" role="timer" aria-label="duration">-03:40 &lt;/div&gt;</code>
+			<code>				&lt;div class="jp-toggles"&gt;</code>
+			<code>					&lt;button  class="jp-repeat" role="button" tabindex="0"&gt;repeat &lt;/button&gt; </code>
+			<code>				&lt; /div&gt;</code>
+			<code>			&lt; /div&gt;</code>
+			<code>		<&lt; /div&gt;</code>
+			<code>		<&lt;div class="jp-details"&gt;</code>
+			<code>			<&lt;div class="jp-title" aria-label="title"&gt;Awesome Track &lt;/div&gt;</code>
+			<code>		&lt; /div&gt;</code>
+			<code>	&lt; /div&gt; </code>
+			<code>&lt; /div&gt;</code>
+		</pre>
+		<style>
+			#web-example1 pre{
+				font-size: 10px;
+			}
+		</style>
+	</section>
+
+	<section class="slide" id="web-example2">
+		<div class="container">
+			<pre>
+				<code>	&lt;audio src="MyChemicalRomance.mp3" </code>
+				<code>			controls="controls"&gt;</code>
+				<code>			&lt;/audio&gt;</code>
+			</pre>
+			<audio src="MyChemicalRomance.mp3" controls="controls" ></audio>
+		</div>
+
+		<style>
+
+			#web-example2 pre{
+				display: block;
+				font-size: 10px;
+				margin-bottom: 20px;
+			}
+			#web-example2 audio{
+				display: block;
+			}
+			#web-example2 div{
+				display: flex;
+
+
+			}
+		</style>
+	</section>
+
+	<section class="slide" id="web-example3">
+		<div class="container">
+			<pre>
+				<code>	&lt;fancy-audio src="MyChemicalRomance.mp3" </code>
+				<code>			autoplay="true"</code>
+				<code>			visualizer="on"&gt;</code>
+				<code>			&lt;/fancy-audio&gt;</code>
+			</pre>
+			<img src="pictures/fincy.png" alt="fincy">
+		</div>
+
+		<style>
+
+			#web-example3 pre{
+				display: block;
+				font-size: 10px;
+				margin-bottom: 20px;
+			}
+			#web-example3 img{
+				width:50%;
+				height: 50%;
+				display: block;
+			}
+			#web-example3 div{
+				display: flex;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Веб-компоненты:</h2>
+		<ul>
+			<li>Custom Elements</li>
+			<li>Shadow DOM</li>
+			<li>HTML Templates</li>
+			<li>HTML Imports</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Варианты</h2>
+		<ul>
+			<li>Polymer</li>
+			<li>React</li>
+			<li>Vue</li>
+			<li>AngularJS</li>
+		</ul>
+	</section>
+
+	<section class="slide" id="test">
+		<h2>Готовность Vue.js</h2>
+		<img src="pictures/testweb.jpg" alt="30/30">
+		<br>
+		<a href="https://vk.com/away.php?to=https%3A%2F%2Fcustom-elements-everywhere.com%2F&cc_key=">
+			https://custom-elements-everywhere.com/</a>
+		<style>
+			#test img {
+				display: block;
+				margin-right: auto;
+				margin-left: auto;
+				width: 75%;
+				height:auto;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Vue::</h2>
+		<ul>
+			<li>Reactive</li>
+			<li>Components</li>
+		</ul>
+	</section>
+
+	<section class="slide" id="vue-example1">
+		<h2>Reactive</h2>
+		<div class="container">
+			<div class="code">
+				<div class="html">
+				<pre>
+					<h3>HTML</h3>
+					<code>&lt;div id="app"&gt;</code>
+  					<code>	{{ message }}</code>
+					<code>&lt;/div&gt;</code>
+				</pre>
+				</div>
+				<div class="js">
+					<h3>JS</h3>
+					<pre>
+						<code>var app = new Vue({</code>
+						<code>	el: '#app',</code>
+						<code>	data: {</code>
+						<code>		message: 'Hello Vue!' </code>
+						<code>	}</code>
+						<code>})</code>
+					</pre>
+				</div>
+			</div>
+			<div class="exapmle">
+				<div id="app">
+					{{ message }}
+				</div>
+				<script>
+					var app = new Vue({
+						el: '#app',
+						data: {
+							message: 'Hello Vue!'
+						}
+					});
+				</script>
+			</div>
+		</div>
+		<style>
+			#vue-example1 .code{
+				display: flex;
+				justify-content: space-between;
+				font-size: 14px;
+			}
+		</style>
+	</section>
+
+	<section class="slide" id="vue-example2">
+		<div class="container">
+			<div class="code">
+				<div class="html">
+				<pre>
+					<h2>HTML</h2>
+					<code> &lt;div id="app-5"&gt;</code>
+					<code> 		&lt;p&gt;  {{ message }}&lt;  /p&gt;</code>
+					<code> 		&lt;button v-on:click="reverseMessage"&gt;</code>
+					<code>			Обратить порядок букв в сообщении&lt;  /button&gt;</code>
+					<code> &lt;/div&gt;</code>
+				</pre>
+				</div>
+				<div class="js">
+					<h2>JS</h2>
+					<pre>
+						<code> var app5 = new Vue({</code>
+						<code> 	el: '#app-5',</code>
+						<code> 	data: {</code>
+						<code> 		message: 'Hello Vue.js!'</code>
+						<code> 	},</code>
+						<code> 	methods: {</code>
+						<code> 		reverseMessage: function () {</code>
+						<code> 			this.message = this.message.split('').reverse().join('')</code>
+						<code> 		}</code>
+						<code> 	}</code>
+						<code> })</code>
+					</pre>
+				</div>
+			</div>
+			<div class="exapmle">
+				<div id="app-5">
+					<p>{{ message }}</p>
+					<button v-on:click="reverseMessage">Обратить порядок букв в сообщении</button>
+				</div>
+				<script>
+					var app5 = new Vue({
+						el: '#app-5',
+						data: {
+							message: 'Hello Vue.js!'
+						},
+						methods: {
+							reverseMessage: function () {
+								this.message = this.message.split('').reverse().join('')
+							}
+						}
+					})
+				</script>
+			</div>
+		</div>
+		<style>
+			#vue-example2 .code{
+				display: flex;
+				justify-content: space-between;
+				font-size: 12px;
+			}
+			#vue-example2 p {
+				margin-bottom: 0;
+			}
+
+		</style>
+	</section>
+
+	<section class="slide" id="components">
+		<h1>Composing with Components</h1>
+		<img src="pictures/components.png" alt="">
+		<style>
+			#components img{
+				width:100%;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<ol>
+			<li>Vegetables </li>
+			<li>Cheese</li>
+			<li>Whatever else humans are supposed to eat</li>
+		</ol>
+	</section>
+
+
+	<section class="slide" id="vue-example4">
+		<div class="container">
+			<div class="code">
+				<div class="html">
+				<pre>
+					<h2>HTML</h2>
+						<code> &lt;div id="app-7"&gt;</code>
+						<code> 	&lt;ol&gt;</code>
+						<code> 		&lt;todo-item</code>
+						<code> 			v-for="item in groceryList"</code>
+						<code> 			v-bind:todo="item"</code>
+						<code> 			v-bind:key="item.id"&gt;</code>
+						<code> 		&lt;/todo-item&gt;</code>
+						<code> 	&lt;/ol&gt;</code>
+						<code> &lt;/div&gt;</code>
+				</pre>
+				</div>
+				<div class="js">
+					<h2>JS</h2>
+					<pre>
+						<code> Vue.component('todo-item', {</code>
+						<code> 		props: ['todo'],</code>
+						<code> 		template: '&lt;li&gt;{{ todo.text }}&gt;/li>'</code>
+						<code> 	})</code>
+						<code> var app7 = new Vue({</code>
+						<code> 	el: '#app-7',</code>
+						<code> 	data: {</code>
+						<code> 		groceryList: [</code>
+						<code> 			{ id: 0, text: 'Vegetables' },</code>
+						<code> 			{ id: 1, text: 'Cheese' },</code>
+						<code> 			{ id: 2, text: 'Whatever else humans are supposed to eat' }</code>
+						<code> 		]</code>
+						<code> 	}</code>
+						<code> })</code>
+					</pre>
+				</div>
+			</div>
+			<div class="example">
+				<div id="app-7">
+					<ol>
+						<todo-item
+							v-for="item in groceryList"
+							v-bind:todo="item"
+							v-bind:key="item.id">
+						</todo-item>
+					</ol>
+				</div>
+				<script>
+					Vue.component('todo-item', {
+						props: ['todo'],
+						template: '<li>{{ todo.text }}</li>'
+					});
+					var app7 = new Vue({
+						el: '#app-7',
+						data: {
+							groceryList: [
+								{ id: 0, text: 'Овощи' },
+								{ id: 1, text: 'Сыр' },
+								{ id: 2, text: 'Что там ещё люди едят?' }
+							]
+						}
+					})
+				</script>
+			</div>
+		</div>
+		<style>
+			#vue-example4 h2{
+				font-size: 16px;
+			}
+			#vue-example4 .example{
+				font-size: 14px;
+			}
+			#vue-example4 .code{
+				display: flex;
+				justify-content: space-between;
+				font-size: 12px;
+			}
+			#vue-example2 p {
+				margin-bottom: 0;
+			}
+
+		</style>
+	</section>
+
+	<section class="slide" id="vue-laravel">
+		<div class="container">
+			<div class="code">
+				<div class="vue">
+				<pre>
+					<h2>example.vue</h2>
+						<code> &lt;template&gt;</code>
+						<code> 	...</code>
+						<code> &lt;/template&gt;</code>
+
+						<code> &lt;script&gt;</code>
+						<code> 	export defult{</code>
+						<code> 	}</code>
+						<code> &lt;/script&gt;</code>
+
+						<code> &lt;style lang="css"&gt;</code>
+						<code> 	...</code>
+						<code> &lt;/style&gt;</code>
+				</pre>
+				</div>
+				<div class="appJs">
+					<h2>app.js</h2>
+					<pre>
+						<code> Vue.component('example', require('../example.vue')) </code>
+					</pre>
+				</div>
+			</div>
+			<
+		</div>
+		<style>
+			#vue-laravel h2{
+				font-size: 16px;
+			}
+
+			#vue-laravel .code{
+				display: flex;
+				justify-content: space-between;
+				font-size: 12px;
+			}
+
+		</style>
+	</section>
+
+
+
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!--das-->
+
 
 	<section class="slide">
 		<h2>Plain text on your slides</h2>
@@ -113,12 +480,13 @@
 		<h2>Code samples</h2>
 		<pre>
 			<code>&lt;!DOCTYPE html&gt;</code>
+
 			<code class="mark">&lt;html lang="en"&gt;</code>
 			<code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-			<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
+			<code> <!--   <div  class="jp-audio" role="application" aria-label="media player">--></code>
 			<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
 			<code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-			<code><mark>&lt;/head&gt;</mark></code>
+			<code><mark>&lt;/head></mark></code>
 		</pre>
 	</section>
 
@@ -203,8 +571,8 @@
 				font-size:100px
 				}
 			#see-more img {
-				width:0.72em;
-				height:0.72em;
+				width: 50%;
+				height: 50%;
 				}
 		</style>
 	</section>
@@ -216,6 +584,7 @@
 	<div class="progress"></div>
 
 	<script src="shower/shower.min.js"></script>
+
 	<!-- Copyright © 2017 Yours Truly, Famous Inc. -->
 
 </body>
